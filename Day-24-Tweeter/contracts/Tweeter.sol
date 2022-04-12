@@ -24,7 +24,7 @@ contract Tweeter{
         uint date;
     }
     
-
+    //Events 
     event TweetSent(uint id,
         address indexed author,
         string description,
@@ -34,6 +34,7 @@ contract Tweeter{
         address indexed from ,
         address indexed to,
         uint date);
+    // Fuctions 
     function createTweet(string calldata _content) external {
         tweets[nextTweet]=Tweet(nextTweet,msg.sender,_content,block.timestamp);
         tweetsOf[msg.sender].push(nextTweet);
@@ -53,11 +54,11 @@ contract Tweeter{
         following[msg.sender].push(_followed);
     }
 
-    function getListTweets(uint count) view external returns(Tweet[] memory){
-        require(count<=nextTweet && count>0,"No Latest tweets");
-        Tweet[] memory _tweets= new Tweet[](count);
+    function getListTweets() view external returns(Tweet[] memory){
+        // require(count<=nextTweet && count>0,"No Latest tweets");
+        Tweet[] memory _tweets= new Tweet[](nextTweet);
 
-        for(uint i=nextTweet-count;i<nextTweet;i++){
+        for(uint i=0;i<nextTweet;i++){
             Tweet storage _tweet = tweets[i];
             _tweets[i]= Tweet(_tweet.id,_tweet.author,_tweet.description,_tweet.date);
         }
