@@ -39,6 +39,7 @@ contract('Contract Testing...',(accounts)=>{
     it('Should Get Max Amount of  Bets ',async()=>{
         let x= await Casinocontract.maxAmountOfBets();
         assert.equal(x,100);
+        console.log(Casinocontract.address);
     })
 
     
