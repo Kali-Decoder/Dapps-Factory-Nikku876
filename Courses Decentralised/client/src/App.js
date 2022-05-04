@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 // import { getWeb3 } from "./web3";
-import Loader from "../utils/loader";
+import Footer from "./components/Footer";
+import Content from "./components/Content";
+// import Loader from "../utils/loader";
 const App = () => {
   useEffect(() => {}, []);
   const [details,setDetails]=useState({
@@ -15,7 +17,7 @@ const App = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      {/* <div className="container-fluid">
         <div className="row bg-dark">
           <div className="col-md-12 col-12 col-xs-12 col-sm-12 mx-auto p-2 d-flex justify-content-between">
             <button className="btn mx-2">
@@ -32,10 +34,12 @@ const App = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* ****************************** */}
       <div className="container-fluid">
         <Navbar />
+        <Content/>
+        <Footer/>
       </div>
     </>
   );

@@ -1,40 +1,285 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=PT+Serif&display=swap');
-body{
-  font-family: 'open sans';
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap");
+    body {
+      background-color: black;
+      transition: all 0.4s;
+    }
+    .navbar {
+      background-color: black !important;
+      color: white !important;
+    }
+    .nav-item,
+    .nav-link {
+      color: white !important;
+      text-transform: uppercase;
+      font-size: small !important;
+      font-style: italic;
+      transition: all 0.3s;
+    }
+    .nav-item:hover {
+      color: yellow !important;
+      cursor: pointer;
+    }
+    .navbar-brand {
+      color: white !important;
+    }
+    .icons {
+      font-size: large !important;
+    }
+    .icons > i:hover {
+      color: yellow !important;
+    }
+    .fa-solid {
+      color: yellow !important;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .button {
+      border-radius: 3px;
+      border: 1px solid white;
+      background-color: black;
+      color: white;
+    }
+    .button:hover {
+      border: 1px solid yellow;
+    }
+    .modal-dialog,
+    .modal-content {
+      background-color: black !important;
+      border: 1px solid yellow;
+      color: white !important;
+    }
+    .category {
+      font-family: "Oleo Script", cursive;
+    }
+
+    
+.course-card {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 10px;
+  transition: 0.25s ease-in-out;
+}
+.course-card-img {
+  width: 100%;
+  height: 225px;
+  border-radius: 25px 25px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.course-card-img .main {
+  height: 120px;
+  width: 130px;
+  object-fit: cover;
+  z-index: 1;
+  transition: 0.25s ease-in-out;
+}
+.course-card-img .layered {
+  height: 120px;
+  width: 130px;
+  position: absolute;
+  filter: blur(19px);
+  transition: 0.25s ease-in-out;
+}
+.course-card-content {
+  padding: 16px;
+}
+.course-card-content h4 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.74);
+}
+.course-card-content h6 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #1c0fd7;
+}
+.course-card:hover {
+  transform: scale(1.05);
+}
+.course-card:hover .course-card-img .main {
+  transform: scale(1.1);
+}
+.course-card:hover .course-card-img .layered {
+  filter: blur(19);
+  transform: scale(1.5);
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: black;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
   margin: 0;
-  background-color: #caf0f8;
+  font-size: 14px;
+  color: #878787;
 }
-.btn{
-    border-radius: 10px !important;
-    padding: 5px 10px !important;
-    background-color: #00b4d8 !important;
-    transition: all .2s;
-} 
-.btn:hover{
-  background-color: #48cae4;
+.copyright-text p a{
+  color: #ff5e14;
 }
-.connect{
-  background-color: #fff !important;
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
 }
-.navbar{
-  background-color: #ade8f4 !important;
-  /* border: 1px solid black; */
+.footer-menu li:hover a{
+  color: #ff5e14;
 }
-.connection{
-  background-color: none !important;
-}
-.navbar-brand{
-  font-family: 'PT Serif', serif;
-  font-weight: 900 !important;
-}
-.nav-item{
-  border: 2px solid yellow;
-  margin-left: 10px;
-  width: 130px !important;
-  border-radius: 4.4px;
-  color: black !important;
-  transition: all .3s;
-}
-.nav-item:hover{
-  border: 2px solid white;
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
 }
