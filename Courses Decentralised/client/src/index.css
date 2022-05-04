@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=PT+Serif&display=swap');
+body{
+  font-family: 'open sans';
+  margin: 0;
+  background-color: #caf0f8;
+}
+.btn{
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    background-color: #00b4d8 !important;
+    transition: all .2s;
+} 
+.btn:hover{
+  background-color: #48cae4;
+}
+.connect{
+  background-color: #fff !important;
+}
+.navbar{
+  background-color: #ade8f4 !important;
+  /* border: 1px solid black; */
+}
+.connection{
+  background-color: none !important;
+}
+.navbar-brand{
+  font-family: 'PT Serif', serif;
+  font-weight: 900 !important;
+}
+.nav-item{
+  border: 2px solid yellow;
+  margin-left: 10px;
+  width: 130px !important;
+  border-radius: 4.4px;
+  color: black !important;
+  transition: all .3s;
+}
+.nav-item:hover{
+  border: 2px solid white;
+}
