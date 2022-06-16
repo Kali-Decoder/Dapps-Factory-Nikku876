@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { TinderContext } from './context/Tinder';
 import Navbar from './Components/Navbar';
-import Card from './Components/Card';
 import CardList from './Components/CardList';
 const App = () => {
   const {accounts}= useContext(TinderContext);

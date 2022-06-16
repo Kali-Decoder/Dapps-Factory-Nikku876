@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import getContract from "../constants/contract";
-import web3 from "../constants/web3";
+import getWeb3 from "../constants/web3";
 export const TinderContext = createContext();
 
 export const TinderProvider = ({ children }) => {
@@ -51,6 +51,7 @@ export const TinderProvider = ({ children }) => {
 
   
   const getDetails = async () => {
+    let web3= await getWeb3();
     let x = await web3.eth.getAccounts();
     setAccounts(x);
     // setCurrentWalletAddress(accounts[0]);
