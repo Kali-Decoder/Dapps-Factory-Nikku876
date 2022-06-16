@@ -36,7 +36,7 @@ export const TinderProvider = ({ children }) => {
         // console.log(typeof name,typeof city,typeof age,typeof gender,typeof url);
         const tx = await contract.methods
           .register(name, city, gender, age, url)
-          .send({ from: currentWalletAddress, gas: "2000000" });
+          .send({ from: currentWalletAddress, gas: "20000000" });
         console.log("You are register ");
         setFormData({ name: "", age: "", city: "", gender: "", url: "" });
       } catch (error) {
