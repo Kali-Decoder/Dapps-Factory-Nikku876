@@ -1,5 +1,5 @@
 import getWeb3 from './web3';
-import Courses from '../contracts/ResourcePlatform.json';
+import Courses from '../contracts/ResourcePlatform.json'
 const getContract=async ()=>{
     let web3= await getWeb3();
     // let id = await web3.eth.getId();

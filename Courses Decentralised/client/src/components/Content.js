@@ -1,6 +1,30 @@
-import React from "react";
-
+import React,{useState,useEffect} from "react";
+import CourseCard from "./CourseCard";
+import getWeb3 from "../utils/web3";
+import getContract from "../utils/contract";
+import Loader from "../utils/loader";
 const Content = () => {
+  const [arrayData, setArrayData] = useState([]);
+  const [contract, setContract] = useState(null);
+  const getArray = async () => {
+    try {
+      const x = await contract.methods.getAllCourses();
+      console.log(x);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getData = async () => {
+    let web3 = await getWeb3();
+    const contract = await getContract();
+    setContract(contract);
+  };
+
+  useEffect(() => {
+    getData();
+    getArray();
+  }, []);
+
   return (
     <div>
       <div className="container mt-4 mb-5">
@@ -24,28 +48,12 @@ const Content = () => {
             <button className="button mx-2">Others</button>
           </div>
         </div>
+      </div>
 
-        <div className="row mt-3">
-          <div className="col-lg-3 col-md-4 col-sm-6">
-            <div className="course-card">
-              <div className="course-card-img">
-                {/* <img
-                  src="https://cdn.freebiesupply.com/logos/large/2x/sketch-2-logo-png-transparent.png"
-                  className="main"
-                  alt=""
-                />
-                <img
-                  src="https://cdn.freebiesupply.com/logos/large/2x/sketch-2-logo-png-transparent.png"
-                  className="layered"
-                  alt=""
-                /> */}
-              </div>
-              <div className="course-card-content">
-                <h4>Sketch App Masterclass</h4>
-                <h6>$ 19.99</h6>
-              </div>
-            </div>
-          </div>
+      <div className="container">
+        <div className="row mt-2"></div>
+        <div className="col-md-4 col-10 col-xs-4 col-sm-4 mx-auto">
+          <CourseCard />
         </div>
       </div>
     </div>

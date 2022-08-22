@@ -22,7 +22,7 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
+const mnemonic= `easy sleep figure mail soup planet indoor cluster caution meadow raccoon fit`;
 module.exports = {
   build_directory:"./client/src/",
   /**

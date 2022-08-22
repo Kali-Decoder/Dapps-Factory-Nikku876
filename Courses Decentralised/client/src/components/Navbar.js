@@ -1,23 +1,48 @@
 import React, { useState, useEffect } from "react";
 import getWeb3 from "../utils/web3";
 import getContract from "../utils/contract";
+import Loader from "../utils/loader";
 const Navbar = () => {
-  const [data, setData] = useState({});
+  const [admin, setAdmin] = useState();
+  const [user, setUser] = useState(null);
+  const [contract, setContract] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    url: "",
+    picUrl: "",
+    instructor: "",
+    price: 0,
+    description: "",
+    category: 0,
+    owner: "",
+  });
+  
+
+  const onChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    setFormData({...formData,[name]:value});
+  };
   const getData = async () => {
     let web3 = await getWeb3();
     console.log(web3);
     const accounts = await web3.eth.getAccounts();
     console.log(accounts);
+    setUser(accounts[2]);
     const contract = await getContract();
-    console.log(contract);
-
-    // console.log(contract.mehtods);
-    // const admin = await contract.methods.admin().call();
-    // console.log(admin);
+    setContract(contract);
   };
+  
   useEffect(() => {
     getData();
   }, []);
+  const getAdmin = async () => {
+    getData();
+    const admin = await contract.methods.admin().call();
+
+    setAdmin(admin);
+    console.log(admin);
+  };
 
   return (
     <>
@@ -57,45 +82,29 @@ const Navbar = () => {
                   SEARCH
                 </a>
               </li>
+              {admin == user ? (
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    data-toggle="modal"
+                    data-target="#exampleModal2"
+                  >
+                    Add Course
+                  </a>
+                </li>
+              ) : null}
 
               <li className="nav-item">
                 <a
                   className="nav-link"
                   data-toggle="modal"
                   data-target="#exampleModal"
+                  onClick={getAdmin}
                 >
                   admin
                 </a>
               </li>
 
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Category
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">
-                    NFT
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Gaming And Collectibles
-                  </a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
-                    DeFi
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    DAO
-                  </a>
-                  <a className="dropdown-item" href="#"></a>
-                </div>
-              </li>
               <li className="nav-item">
                 <button
                   className="button mt-2 p-1 mx-3"
@@ -162,6 +171,14 @@ const Navbar = () => {
               </div>
               <div className="modal-body">
                 <p>
+                  Here is the admin address{" "}
+                  {admin ? (
+                    <sapn className="text-danger">{admin}</sapn>
+                  ) : (
+                    <Loader />
+                  )}
+                </p>
+                <p>
                   Mutant Ape Yacht Club is a collection of digital artworks
                   (NFTs) running on the Ethereum network. This website is only
                   an interface allowing participants to purchase digital
@@ -180,18 +197,6 @@ const Navbar = () => {
                   collectibles.
                 </p>
               </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" className="btn btn-primary">
-                  Save changes
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -207,10 +212,8 @@ const Navbar = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Connect Your MetaMask
-                  <button className="button mx-3" onClick={getData}>
-                    Metamask
-                  </button>
+                  {admin ? admin : "Connect Your MetaMask "}
+                  <button className="button mx-3">Metamask</button>
                 </h5>
                 <button
                   type="button"
@@ -221,6 +224,87 @@ const Navbar = () => {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="modal fade"
+          id="exampleModal2"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel2"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabe2">
+                  Register Your Decentralised Course
+                </h5>
+              </div>
+              <form action="" className="p-3 mb-3">
+                <input
+                  type="text"
+                  name="owner"
+                  id="owner"
+                  className="form-control mt-3 bg-dark text-white"
+                  placeholder="Wallet Address of Owner"
+                />
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="form-control mt-3 bg-dark text-white"
+                  placeholder="Course Name"
+                />
+                <input
+                  type="text"
+                  name="instructor"
+                  id="instructor"
+                  className="form-control mt-3 bg-dark text-white"
+                  placeholder="Instructor Name"
+                />
+                <input
+                  type="url"
+                  name="url"
+                  id="url"
+                  className="form-control mt-3 bg-dark text-white"
+                  placeholder="Paste Url Of Course"
+                />
+                <input
+                  type="url"
+                  name="picUrl"
+                  id="picUrl"
+                  className="form-control mt-3 bg-dark text-white"
+                  placeholder="Picture Url"
+                />
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  step="0.1"
+                  className="form-control mt-3 bg-dark text-white"
+                />
+                <textarea
+                  name="description"
+                  placeholder="Description of course"
+                  className="form-control mt-3 bg-dark text-white"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+                <select name="" className="custom-select bg-dark" id="">
+                  <option value="1">NFT</option>
+                  <option value="2">NFT</option>
+                  <option value="3">NFT</option>
+                  <option value="4">NFT</option>
+                  <option value="5">NFT</option>
+                  <option value="6">NFT</option>
+                  <option value="7">NFT</option>
+                  <option value="8">Other</option>
+                </select>
+
+                <button className="btn mt-3">Submit My D-Course</button>
+              </form>
             </div>
           </div>
         </div>
