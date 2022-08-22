@@ -1,0 +1,96 @@
+body{
+  background-color:#0f0c29;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; */
+}
+.button{
+  outline: none;
+  border: none;
+  padding: 6px 12px ;
+  background-color: #302b63;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px ;
+  transition: all 0.4s ease;
+}
+.button:hover{
+  color: white;
+}
+input{
+  width: 100%;
+  outline: none;
+  padding: 5px 14px;
+}
+
+/* *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100%;
+} */
+
+/* body {
+  background: linear-gradient(to bottom right, #14151c, black, #080b1f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 100%;
+  color: #ededed;
+} */
+
+#container {
+  display: flex;
+  width: 500px;
+  height: 25px;
+  background: black;
+  border-radius: 6px;
+  border: 2px solid dimgray;
+  align-items: center;
+}
+
+@keyframes load {
+  from {transform: translate(0, 0)}
+  to {transform: translate(390px, 0)}
+}
+
+#bar {
+  width: 100px;
+  height: 10px;
+  background: linear-gradient(to bottom right, cyan, lightblue);
+  border-radius: 6px;
+  box-shadow: 0 0 10px lightblue;
+  
+  animation: load .25s infinite alternate ease-in-out;
+}
+
+@keyframes dots {
+  from {color: cyan; transform: translate(0, -10%);}
+  to {color: white; transform: translate(0, 0);}
+}
+
+.dot {
+  display: inline-block;
+  font-size: 250%;
+}
+
+.dot:nth-child(1) {
+  animation: dots .5s infinite alternate linear;
+}
+
+.dot:nth-child(2) {
+  animation: dots 1s infinite alternate linear;
+}
+
+.dot:nth-child(3) {
+  animation: dots 1.5s infinite alternate linear;
+}
+
+h1 sub {
+  margin-left: 5%;
+  font-size: 15%;
+  font-weight: normal;
+}
