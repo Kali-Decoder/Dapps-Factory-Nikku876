@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "axios": "^0.26.1",
+    "form-data": "^4.0.0"
+  }
+}
