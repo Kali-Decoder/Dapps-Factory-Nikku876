@@ -1,0 +1,21 @@
+{
+  "name": "real-time-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.3",
+    "fs-extra": "^10.0.1",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^9.2.1",
+    "web3": "^1.7.0"
+  },
+  "devDependencies": {
+    "solc": "^0.4.26"
+  }
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fbf8cc;
+  font-family: 'PT Serif', serif;
+}
+.nav{
+  /* border: 3px solid red; */
+  background-color: #fff;
+}
+.button{
+  height: 100%;
+  padding: 4px 14px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border: 2px solid black;
+}
+.campaign-list{
+  height: 30rem;
+  background-color: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+.campaign-list::-webkit-scrollbar{
+  width: 4px ;
+  background-color: greenyellow;
+  border-radius: 30px;
+  height: 10px !important;
+}
+.campaign-item{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  transition: all .4s ease-in-out;
+}
+.campaign-item:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.createButton{
+  border: none;
+  outline: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #ffb703;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.second{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input{
+  text-align: center;
+  width: 100%;
+  /* border: 2px solid black; */
+  padding: 5px 14px;
+}
+
+.card{
+  width :12rem !important;
+  height :auto;
+}
+td{
+  font-size: 12px !important;
+  /* margin-left: 12px; */
+
+}
+th{
+  color: #457b9d !important;
+}
