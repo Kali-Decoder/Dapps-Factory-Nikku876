@@ -1,0 +1,41 @@
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #023047 !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+.nav{
+  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.connectWallet{
+  cursor: pointer;
+}
+
+.content{
+  /* border: 2px solid white; */
+  height: 100% !important;
+}
+.card{
+  border: 1.5px solid white;
+  background-color: #023047;
+}
+.homePage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+  color: #fca311;
+  font-size: 100px !important;
+}
