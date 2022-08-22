@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truffle Book Project</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-2">
+        <div class="col-md-10 col-10 col-xs-10 col-lg-10 col-sm-10 mx-auto">
+          <h3 class="text-center">Decentralise Task-Manager</h3>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-md-10 col-10 col-xs-10 col-lg-10 col-sm-10 mx-auto">
+          <div class="card p-4 mt-4">
+            <div class="card-body">
+              <h5 class="text-center">Transaction Doer</h5>
+              <code>Owner Address{}</code>
+              <br />
+              <form action="">
+                <input
+                  type="text"
+                  placeholder="Doer Address"
+                  class="form-control mt-4"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Tokens For Doer"
+                  class="form-control mt-4"
+                />
+
+                <button class="btn text-center btn-sm btn-primary mt-4">
+                  Transact
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+          <div class="col-md-12 col-12 col-xs-12 mx-auto showTransaction p-3">
+              <div class="transact">
+                <h6>
+                    <span class="dot"></span>
+                    Transaction to Address this Amount</h6>
+              </div>  
+          </div>
+      </div>
+    </div>
+    <script type="module" defer  src="./js/client.js"></script>
+  </body>
+</html>
