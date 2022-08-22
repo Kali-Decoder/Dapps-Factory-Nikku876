@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+body {
+  font-family: 'PT Serif', serif;
+}
+h3,h4,h5,h6{
+  font-weight: 800;
+}
+button{
+  padding: 4px 18px;
+  outline: none;
+  border: none;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+input{
+  padding: 4px 14px;
+  
+}
+button:focus{
+  border: 2px solid black ;
+}
+.spinner-border{
+  font-size: 10px !important;
+  width: 2rem !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
