@@ -1,0 +1,21 @@
+body{
+  background-color: #03045e;
+}
+.card{
+  background-color: #03045e;
+  width: 100%;
+  color: white;
+}
+.outer{
+  display:flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  border: 2px solid white;
+  padding: 10px auto;
+  overflow-y: scroll;
+}
+.outer::-webkit-scrollbar{
+  width: 5px;
+}
