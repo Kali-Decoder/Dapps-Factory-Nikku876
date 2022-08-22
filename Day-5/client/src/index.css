@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,100&display=swap');
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body{
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-family: 'Roboto Serif', sans-serif;
+color: white;
+
+}
+.navbar-icon{
+  margin-top: 6px;
+}
+
+.navbar-items{
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 1px solid red; */
+  width: 50%;
+}
+.navbar-items > a{
+  color: white;
+  margin-top: 8px;
+}
+.navbar-items > a:hover{
+  color: aqua;
+  text-decoration: none;
+}
+.button{
+  border: 1px solid white;
+  outline: none;
+  padding: 2px 12px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #00f260, #0575e6);
+  color: black;
+  font-weight: 900;
+  transition: all .3s ease;
+}
+.button:hover{
+  border: 1px solid black;
+}
+
+.content{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 30%;
+   */
+   padding: 5px 10px;
+   margin-top: 5px;
+
+}
+.main{
+  border: 2px solid white;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 10px;
+}
+input{
+  width: 100%;
+  padding: 5px 12px;
+  outline: none;
+  border: none;
+  background: #302b63;
+  margin-top: 10px;
+  color: white;
+}
+.data-input{
+  margin-top: 10px;
+  border: 1px solid white;
+  
+} 
+.loading{
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  overflow: hidden;
+}
+.card{
+  background-color: #24243e;
+}
